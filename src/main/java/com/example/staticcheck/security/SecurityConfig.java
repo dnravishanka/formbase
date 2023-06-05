@@ -24,47 +24,8 @@ public class SecurityConfig {
     public SecurityConfig(AppUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
-    // =========defautlPasswordEncorder is not safe and is to be deprecated=====
-
-    /*@Bean
-    public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-        UserDetails user1 = User.withDefaultPasswordEncoder()
-                .username("admin")
-                .password("12345")
-                .roles("ADMIN")
-                .build();
-        UserDetails user2 = User.withDefaultPasswordEncoder()
-                .username("manager")
-                .password("1234")
-                .roles("MANAGER")
-                .build();
-        UserDetails user3 = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("123")
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user1,user2,user3);
 
 
-    }*/
-
-    //-------------PasswordEncoder for better Encoding --------
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        UserDetails user1 = User.builder().username("admin")
-//                .password(passwordEncoder().encode("1234"))
-//                .roles("ADMIN")
-//                .build();
-//        UserDetails user2 = User.builder().username("manager")
-//                .password(passwordEncoder().encode("1234"))
-//                .roles("MANAGER")
-//                .build();
-//        UserDetails user3 = User.builder().username("nadun")
-//                .password(passwordEncoder().encode("1234"))
-//                .roles("USER")
-//                .build();
-//        return new InMemoryUserDetailsManager(user1,user2,user3);
-//    }
 
 
     @Bean
@@ -86,15 +47,41 @@ public class SecurityConfig {
                 )
 //                .formLogin()
 //                .loginPage("/login").permitAll();
+
+        /*------------using  spring default convention---------- at login form -->
+                                                           1-  <form name="f" th:action="@{/login}" method="post">
+                                                           2 - <input type="text"  id="username"  name="username"   >
+                                                           3 - <input type="password"  id="password" name="password" >
+                                                           4 - <input type="checkbox"  id="remember-me" name="remember-me">
+                in these convention spring automatically handle encoding process
+        */
+
                 .formLogin((form)->form
                         .loginPage("/login").permitAll())
                 .logout((logout)->logout.permitAll()
                         .logoutSuccessUrl("/home"))
                 .rememberMe().tokenValiditySeconds(60).key("mytoken");
+               httpSecurity.csrf().disable();
+        return httpSecurity.build();
 
+          /*---------------using customising naming    -----------login form-----------
+                                                            1-  <form name="f" th:action="@{/signin}" method="post">
+                                                           2 - <input type="text"  id="myusername"  name="myusername"   >
+                                                           3 - <input type="password"  id="mypassword" name="mypassword" >
+                                                           4 - <input type="checkbox"  id="myremember-me" name="myremember-me">
+                */
+              /*  .formLogin((form)->form
+                        .loginProcessingUrl("signin")
+                        .loginPage("/login").permitAll()
+                        .usernameParameter("myusername")
+                        .passwordParameter("mypassword"))
+                .logout((logout)->logout
+                        .permitAll()
+                        .logoutSuccessUrl("/home"))
+                .rememberMe().tokenValiditySeconds(250).key("mytoken").rememberMeParameter("myremember-me");
 
 //        httpSecurity.csrf().disable();
-        return httpSecurity.build();
+        return httpSecurity.build();*/
 
     }
     @Bean

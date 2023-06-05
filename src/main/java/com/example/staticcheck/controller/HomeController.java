@@ -19,7 +19,7 @@ public class HomeController {
     public String adminpage() {
         return "admin/index";
     }
-    @GetMapping("user")
+    @GetMapping("users/user")
     public String userpage() {
         return "user/index";
     }
@@ -27,11 +27,11 @@ public class HomeController {
     public String managepage() {
         return "management/index";
     }
-    @GetMapping("customer")
+    @GetMapping("users/customer")
     public String customerpage() {
         return "admin/customer";
     }
-    @GetMapping("employ")
+    @GetMapping("users/employ")
     public String emploeepage() {
         return "admin/employ";
     }

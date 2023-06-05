@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:fragment="headFiles">
     <meta charset="UTF-8">
     <title>Home page</title>
@@ -140,22 +141,26 @@
                         <a class="nav-link" th:href="@{/home}">HOME</A> </a>
                     </li>
 
-                    <li class="nav-item" style="width: 100px">
-                        <a class="nav-link" th:href="@{/admin}">ADMIN</a>
+                    <li sec:authorize="hasRole('ADMIN')" class="nav-item" style="width: 100px">
+                        <a  class="nav-link" th:href="@{/admin}">ADMIN</a>
                     </li>
-                    <li class="nav-item" style="width: 150px">
+                    <li sec:authorize="hasAnyRole('ADMIN','MANAGER')" class="nav-item" style="width: 150px">
                         <a class="nav-link" th:href="@{/manage}">MANAGEMENT</a>
                     </li>
 <!--                    <li class="nav-item" style="width: 100px">-->
 <!--                        <a class="nav-link" th:href="@{/manage}">MANAGEMENT</a>-->
 <!--                    </li>-->
-                    <li class="nav-item" style="width: 100px">
+                    <li sec:authorize="isAuthenticated()" class="nav-item" style="width: 100px">
                         <a class="nav-link" th:href="@{/user}">USER</a>
                     </li>
                     <li class="nav-item" style="width: 80px">
-                        <form th:action="@{/logout}" method="post">
-                            <button type="submit" class="border-danger" >log out</button>
+                        <form th:action="@{/logout}" form-method="post">
+                            <button sec:authorize="isAuthenticated()" type="submit" class="border-danger" >log out</button>
+
+                            <a sec:authorize="isAnonymous()" class="nav-link" th:href="@{/login}">longin</a>
                         </form>
+<!--                        <button sec:authorize="isAnonymous()" th:href="@{/login}"  class="border-danger" >Login</button>-->
+<!--                        <a sec:authorize="isAnonymous()" class="nav-link" th:href="@{/login}">longin</a>-->
                     </li>
 
                 </ul>
@@ -171,7 +176,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <a th:href="@{/customer}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">CUSTOMER</a>
+            <a th:href="@{/users/customer}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">CUSTOMER</a>
         </div>
     </div>
     <div class="row" style="height: 30px">

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments.html::headFiles">
+
+</head>
+<body>
+<div class="container">
+<div class="row" th:replace="fragments.html::headerBar"></div>
+<div class="row" th:replace="fragments.html::paddingBar"></div>
+<div class="row" th:replace="fragments.html::navbar"></div>
+<div class="row">
+    <div class="col-md-2" th:insert="fragments.html::sideNavebar"></div>
+<!--    content here-->
+    <div class="col-md-10" >
+        <div class="row">
+            <div class="col-md-1" id="spaceform1"></div>
+            <div class="col-md-10">
+                <form >
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Customer Id</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" >
+
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Customer Name</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Customer Address </label>
+                        <input type="text" class="form-control" id="formGroupExampleInfput2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Credit Limit</label>
+                        <input type="text" class="form-control" id="formGroupExampleInpfut2" >
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-md-1 ">
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" style="text-align: center">
+                <button type="button" class="btn btn-primary btn-sm" id="addbtn">ADD</button>
+                <button type="button" class="btn btn-secondary btn-sm" id="btnupdate">UPDATE</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btndelete">DELETE</button>
+                <button type="button" class="btn btn-secondary btn-sm" id="btnrefresh">REFRESH</button>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <br>
+        <div class="row" id="table"  style="height: 3px">
+            <hr style="height: 3px"> </div>
+        <!--table-->
+        <div class="row" style=" height: 20px"></div>
+        <div  class="row" >
+
+            <div class="col-md-1" > </div>
+            <div class="col-md-10">
+                <table class="table table-hover">
+                    <thead>
+                    <tr id="tablehead">
+                        <th scope="col">Customer Id</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Customer Address</th>
+                        <th scope="col">Credit Limit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

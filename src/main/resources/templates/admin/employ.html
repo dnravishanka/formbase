@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments.html::headFiles">
+
+</head>
+<body>
+<div class="container" style="background-color: #bcbebf">
+<div class="row" th:replace="fragments.html::headerBar"></div>
+<div class="row" th:replace="fragments.html::paddingBar"></div>
+<div class="row" th:replace="fragments.html::navbar"></div>
+<div class="row">
+    <div class="col-md-2" th:insert="fragments.html::sideNavebar"></div>
+
+<!--    content-->
+    <div class="col-md-10" style="background-color: #e7f1ff">
+        <div class="row">
+            <div class="col-md-1" id="spaceform1"></div>
+            <div class="col-md-10">
+                <br>
+                <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"><label for="formGroupExampleInput">Employ Id</label></div>
+                            <div class="col-md-3"><input type="text" class="form-control" id="formGroupdExampleInput" ></div>
+                            <div class="col-md-7"></div>
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"><label for="formGroupExampleInput">Employ Name</label></div>
+                            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExuampleIput" ></div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"><label for="formGroupExampleInput">Last Name</label></div>
+                            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleIput" ></div>
+                        </div>
+                        </div><br>
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2"><label for="formGroupExampleInput">Employ Address</label></div>
+                                <div class="col-md-10"><input type="text" class="form-control" id="formGroupExamleInput" ></div>
+                            </div>
+                        </div><br>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2"><label for="formGroupExampleInput">Employ Email</label></div>
+                                <div class="col-md-10"><input type="text" class="form-control" id="formGoupExampleInput" ></div>
+                            </div>
+                        </div><br>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2"><label for="formGroupExampleInput">Employ Status</label></div>
+                                <div class="col-md-4"><input type="text" class="form-control" id="formGouExampleInput" ></div>
+                                <div class="col-md-6"></div>
+                            </div>
+                        </div><br>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2"><label for="formGroupExampleInput">Employ Salary</label></div>
+                                <div class="col-md-3"><input type="text" class="form-control" id="formGroupampleInput" ></div>
+                                <div class="col-md-7"></div>
+                            </div>
+                        </div><br>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2"><label for="formGroupExampleInput">Employ date</label></div>
+                                <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput" ></div>
+                                <div class="col-md-7"></div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+
+
+
+            <div class="col-md-1 "></div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" style="text-align: center">
+<!--                <button  type="submit" class="btnx" id="btnAd"><b>ADD</b></button>-->
+<!--                <button type="button" class="btnx " id="btnup">UPDATE</button>-->
+<!--                <button type="button" class="btnx" id="btnde">DELETE</button>-->
+<!--                <button type="button" class="btnx" id="btnRe">REFRESH</button>-->
+                <button type="button" class="btn btn-outline-success">ADD</button>
+                <button type="button" class="btn btn-outline-secondary">UPDATE</button>
+                <button type="button" class="btn btn-outline-danger">DELETE</button>
+                <button type="button" class="btn btn-outline-primary">REFRESH</button>
+
+
+
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <br>
+        <div class="row" id="table"  style="height: 3px">
+            <hr style="height: 3px"> </div>
+        <!--table-->
+        <div class="row" style=" height: 20px"></div>
+        <div  class="row" >
+
+            <div class="col-md-1" > </div>
+            <div class="col-md-10">
+                <table class="table table-hover">
+                    <thead>
+                    <tr id="tablehead">
+                        <th scope="col"> Id</th>
+                        <th scope="col"> Name</th>
+                        <th scope="col"> Address</th>
+                        <th scope="col"> Email</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"> Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

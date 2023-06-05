@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments.html::headFiles">
+
+</head>
+<body>
+<div class="container">
+<div class="row" th:replace="fragments.html::headerBar"></div>
+<div class="row" th:replace="fragments.html::paddingBar"></div>
+<div class="row" th:replace="fragments.html::navbar"></div>
+<div class="row">
+    <div class="col-md-2" th:insert="fragments.html::sideNavebar"></div>
+    <div class="col-md-10" id="conte"> <h1> ADMIN</h1></div>
+
+</div>
+
+</div>
+
+</body>
+</html>

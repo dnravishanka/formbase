@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css}">
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js}"></script>
+<!--    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">-->
+<!--    <script th:src="@{/js/bootstrap.min.js}"></script>-->
+    <style type="text/css">
+        .poshead{
+            color: white;
+            font-size: 30px;
+
+        }
+        #sidebar{
+            background-color: #17a2b8;
+            height: 100%;
+        }
+        .sidehover:hover{
+            background-color: #117a8b;
+
+        }
+        .sidehover{
+            text-align: match-parent;
+
+        }
+        .sidehover:active{
+            background-color: white;
+
+        }
+        .sidehover:link{
+            background-color: #0b2e13;
+        }
+        #head{
+            height: 50px;
+        }
+        #table{
+            background-color: #80bdff;
+        }
+        #tablehead{
+            background-color: #b3b7bb;
+        }
+        .clearbtn{
+            background-color: #721c24;
+            color: white;
+        }
+        .dash{
+            color:black;
+        }
+        #addbtn{
+            width: 100px;
+            background-color: #005cbf;
+            color: white;
+        }
+        #btnupdate{
+            width: 100px;
+            background-color:#17a2b8;
+            color: white;
+        }
+        #btndelete{
+            width: 100px;
+            background-color:#721c24;
+            color: white;
+        }
+        #btnrefresh{
+            width: 100px;
+            background-color: #005cbf;
+            color: white;
+        }
+        a{
+            text-decoration: none!important;
+        }
+        a:active{
+            color: white;
+        }
+        #dash:active{
+            background-color: white;
+        }
+        #conte{
+            background-color: #6c757d;
+            text-align: center;
+        }
+        .nav-item:hover{
+            background-color: #80bdff;
+        }
+        #id{
+            height: 80%;
+        }
+        .nav-link:enabled{
+            background-color: #1e2125;
+        }
+        .btn:hover{
+            background-color: #bcbebf;
+        }
+
+        #btnAd{
+            color: green;
+        }
+        #btndel{
+            color: red;
+        }
+        #btnup{
+            color: blue;
+        }
+        #btnRe{
+            background-color: gray;
+        }
+        .btnx:hover{
+            background-color: #0dcaf0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row" th:replace="fragments.html::headerBar"></div>
+    <div class="row" th:replace="fragments.html::paddingBar"></div>
+    <div class="row" th:replace="fragments.html::navbar">
+
+    </div>
+    <div class="row">
+<!--        <div class="col-md-2" th:insert="fragments.html::sideNavebar"></div>-->
+
+<!--        content-->
+        <div class="col-md-12" >
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div>
+                    <main role="main">
+
+                        <!-- Main jumbotron for a primary marketing message or call to action -->
+                        <div class="row" style="height: 15px"></div>
+                        <div class="jumbotron">
+                            <div class="container">
+                                <h1 class="display-2"><b style="">VAANYA AGRO PAGE</b></h1>
+                                <p>WE PROVIDE BEST QUALITY PRODUCTS FOR NATION </p>
+                                <p><a class="btn btn-primary btn-lg" href="#" role="button">About Us »</a></p>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <!-- Example row of columns -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h3>OUR VISION</h3>
+                                    <p>PROVIDE BEST QUALITY PRODUCTS FOR NATION <br>
+                                        <img th:src="@{/images/phot.jpg}" height="178"
+                                             width="267"/></p>
+                                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3>OUR WORK PLACE</h3>
+                                    <p>MORE THAN 5 ACRES <BR>75 EMPLOES <BR><img th:src="@{/images/photo.jpg}"/></p>
+                                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>OUR PRODUCTS</h3>
+                                    <p>MORE THAN <br>35 PRODUCTS <br><img th:src="@{/images/ph.jpg}"
+                                                                          />
+                                    </p>
+                                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                                </div>
+                            </div>
+                            </div>
+
+                            <br>
+
+
+
+                       </main>
+                      </div>
+                   <div class="col-md-1"></div>
+               </div>
+             </div>
+        </div>
+    </div>
+</body>
+</html>
